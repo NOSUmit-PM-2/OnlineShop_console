@@ -15,6 +15,5 @@ namespace OnlineShop
             this.Product = product;
             this.Count = 1;
         }
-        
     }
 }

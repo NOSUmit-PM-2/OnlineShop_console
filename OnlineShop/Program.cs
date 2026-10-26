@@ -32,12 +32,18 @@ namespace OnlineShop
             catalog.Add(new Product("Майка", 1005, "с принтом"));
             catalog.Add(new Product("Тапки", 250, "пляжные"));
             catalog.Add(new Product("Тетрадь", 17, "по информатике"));
+            catalog.Add(new Food("Молоко", 170, "коровье", "15.10.2026", 10));
 
             ShowCatalog();
             Console.WriteLine("Введите номер  товара");
             int ind = Convert.ToInt32(Console.ReadLine());
 
-            Cart currentUserCart = new Cart();
+            if (catalog[ind] is Food)
+            {
+                Console.WriteLine((catalog[ind] as Food).ExpirationDate);
+            } 
+           
+            /*Cart currentUserCart = new Cart();
             // это плохо 
             //Product product = catalog.getAll()[ind];
 
@@ -60,7 +66,7 @@ namespace OnlineShop
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }
+            }*/
         }
     }
 }
