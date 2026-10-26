@@ -13,7 +13,25 @@ namespace OnlineShop
         public int Count { get {return items.Count();} }
 
         public void Add(Product product)
-            { items.Add(new CartItem(product)); }
+        {
+            CartItem selectedProduct = null;
+            foreach (CartItem item in items)
+            {
+                if (item.Product.Name == product.Name)
+                {
+                    selectedProduct = item;
+                    break; 
+                }
+            }
+            if (selectedProduct != null)
+            {
+                selectedProduct.Count++;
+            }
+            else
+            {
+                items.Add(new CartItem(product));
+            }
+        }
 
         public void Delete()
             {  }
@@ -21,6 +39,26 @@ namespace OnlineShop
         
         public CartItem[] getAll()
             { return items.ToArray(); }
+
+        public void AddOneInCart(CartItem item)
+        {
+            if (item != null)
+            {
+                item.Count++;
+            }
+        }
+
+        public void RemoveOneInCart(CartItem item)
+        {
+            if (item != null)
+            {
+                item.Count--;
+                if (item.Count <= 0)
+                {
+                    items.Remove(item);
+                }
+            }
+        }
 
     }
 }
