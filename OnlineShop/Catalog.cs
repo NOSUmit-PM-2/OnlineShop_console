@@ -9,6 +9,7 @@ namespace OnlineShop
     public class Catalog
     {
         List<Product> listProducts = new List<Product>();
+        
 
         public Product this[int index]
         {
@@ -22,9 +23,9 @@ namespace OnlineShop
 
             get
             {
-                index--;
                 if (index >= 0 && index < listProducts.Count)
                     return listProducts[index]; 
+                //index--;
                 throw new IndexOutOfRangeException();    
             }
 
@@ -32,7 +33,7 @@ namespace OnlineShop
         }
 
         public void Add(Product product)
-        { 
+        {
             listProducts.Add(product);
         }
 

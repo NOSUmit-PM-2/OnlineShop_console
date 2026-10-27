@@ -8,12 +8,18 @@ namespace OnlineShop
 {
     public class Product
     {
+        //int Id { get; }
+        //static int article = 0;
+
+        Guid Id { get; }
+
         public decimal Price { get; }
         public string Name { get; }
         public string Description { get; }
 
         public Product(string name, decimal price, string description)
         {
+            Id = Guid.NewGuid();
             Price = price;
             Name = name;
             Description = description;
@@ -21,7 +27,7 @@ namespace OnlineShop
 
         public override string ToString()
         {
-            return $"{Name} ({Description} - {Price})";
+            return $"{Id}: {Name} ({Description} - {Price})";
         }
     }
 }

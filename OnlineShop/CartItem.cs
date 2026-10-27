@@ -16,5 +16,10 @@ namespace OnlineShop
             this.Count = 1;
         }
         
+        public override string ToString()
+        {
+            return $"{Product.Name} количество {Count} цена {Count * Product.Price}";
+        }
+
     }
 }
