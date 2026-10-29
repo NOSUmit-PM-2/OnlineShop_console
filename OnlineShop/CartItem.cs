@@ -15,6 +15,10 @@ namespace OnlineShop
             this.Product = product;
             this.Count = 1;
         }
-        
+
+        public decimal Sum
+        {
+            get { return Product.Price * Count; }
+        }
     }
 }

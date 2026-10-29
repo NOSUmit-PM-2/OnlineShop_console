@@ -38,17 +38,7 @@ namespace OnlineShop
             int ind = Convert.ToInt32(Console.ReadLine());
 
             Cart currentUserCart = new Cart();
-            // это плохо 
-            //Product product = catalog.getAll()[ind];
 
-            //Product product = catalog[ind];
-            //if (product == null)
-            //    Console.WriteLine("Аккуратно введите правильный номер");
-            //else
-            //{
-            //    currentUserCart.Add(product);
-            //    ShowCurrentCart(currentUserCart);
-            //}
 
             try
             {

@@ -1,0 +1,16 @@
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\bin\Debug\net8.0-windows\WinFormOnlineShop_2026.exe
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\bin\Debug\net8.0-windows\WinFormOnlineShop_2026.deps.json
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\bin\Debug\net8.0-windows\WinFormOnlineShop_2026.runtimeconfig.json
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\bin\Debug\net8.0-windows\WinFormOnlineShop_2026.dll
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\bin\Debug\net8.0-windows\WinFormOnlineShop_2026.pdb
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.FormCatalog.resources
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.csproj.GenerateResource.cache
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.GeneratedMSBuildEditorConfig.editorconfig
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.AssemblyInfoInputs.cache
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.AssemblyInfo.cs
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.csproj.CoreCompileInputs.cache
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.dll
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\refint\WinFormOnlineShop_2026.dll
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.pdb
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\WinFormOnlineShop_2026.genruntimeconfig.cache
+C:\Downloads\OnlineShop_console-master\WinFormOnlineShop_2026\obj\Debug\net8.0-windows\ref\WinFormOnlineShop_2026.dll

@@ -1,17 +1,19 @@
-using OnlineShop;
+п»їusing OnlineShop;
 
 namespace WinFormOnlineShop_2026
 {
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
+        Cart cart = new Cart();
+
         public FormCatalog()
         {
             InitializeComponent();
-            catalog.Add(new Product("Вертолет", 100, "игрушка веселая"));
-            catalog.Add(new Product("Майка", 1005, "с принтом"));
-            catalog.Add(new Product("Тапки", 250, "пляжные"));
-            catalog.Add(new Product("Тетрадь", 17, "по информатике"));
+            catalog.Add(new Product("Р’РµСЂС‚РѕР»РµС‚", 100, "РРіСЂСѓС€РµС‡РЅС‹Р№"));
+            catalog.Add(new Product("РњР°Р№РєР°", 1005, "РЎ РїСЂРёРЅС‚РѕРј"));
+            catalog.Add(new Product("РўР°РїРєРё", 250, "РџР»СЏР¶РЅС‹Рµ"));
+            catalog.Add(new Product("РўРµС‚СЂР°РґСЊ", 17, "РџРѕ РёРЅС„РѕСЂРјР°С‚РёРєРµ"));
             ShowCatalog();
         }
 
@@ -24,7 +26,30 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index = listBoxCatalog.SelectedIndex;
+            if (index < 0)
+                return;
 
+            Product product = catalog[index + 1];
+            labelProductName.Text = product.Name;
+            labelDescription.Text = product.Description + "\r\nР¦РµРЅР°: " + product.Price;
+        }
+
+        private void buttonAddToCart_Click(object sender, EventArgs e)
+        {
+            int index = listBoxCatalog.SelectedIndex;
+            if (index < 0)
+            {
+                MessageBox.Show("Р’С‹Р±РµСЂРёС‚Рµ С‚РѕРІР°СЂ РІ СЃРїРёСЃРєРµ");
+                return;
+            }
+            cart.Add(catalog[index + 1]);
+        }
+
+        private void buttonOpenCart_Click(object sender, EventArgs e)
+        {
+            FormCart formCart = new FormCart(cart);
+            formCart.ShowDialog();
         }
     }
 }
