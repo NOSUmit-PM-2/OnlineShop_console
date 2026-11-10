@@ -1,4 +1,5 @@
 using OnlineShop;
+using System.Windows.Forms;
 
 namespace WinFormOnlineShop_2026
 {
@@ -13,8 +14,11 @@ namespace WinFormOnlineShop_2026
             catalog.Add(new Product("Тапки", 250, "пляжные"));
             catalog.Add(new Product("Тетрадь", 17, "по информатике"));
             ShowCatalog();
+            listBoxCatalog.SelectedIndex = 0;
+            labelProductName.Text = catalog[1].Name;
+            labelDescription.Text = catalog[1].Description;
+            labelDescription.Text += "\n" + "Цена товара: " + catalog[1].Price;
         }
-
         void ShowCatalog()
         {
             int i = 0;
@@ -24,7 +28,9 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            labelProductName.Text = catalog[listBoxCatalog.SelectedIndex+1].Name;
+            labelDescription.Text = catalog[listBoxCatalog.SelectedIndex+1].Description;
+            labelDescription.Text += "\n" + "Цена товара: " + catalog[listBoxCatalog.SelectedIndex+1].Price;
         }
     }
 }
