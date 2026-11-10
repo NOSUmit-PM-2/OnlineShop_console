@@ -33,20 +33,20 @@ namespace WinFormOnlineShop_2026
             labelDescription.Text = catalog[listBoxCatalog.SelectedIndex + 1].Description;
             labelDescription.Text += "\n" + "Цена товара: " + catalog[listBoxCatalog.SelectedIndex + 1].Price;
         }
-        void AddOrIncrease(Catalog basket, Product product, int amount = 1)
+        void AddOrIncrease(Catalog basket, Product product)
         {
             bool flag = false;
             for (int i = 1; i < basket.Count()+1;i++)
             {
                 if (basket[i].Name == product.Name)
                 {
-                    basket[i].IncreaseQuantity(amount);
+                    basket[i].IncreaseQuantity();
                     flag = true;
                 }
             }
             if (flag) { return; }
             if (!flag)
-            basket.Add(new Product(product.Name, product.Price, product.Description, amount));
+            basket.Add(new Product(product.Name, product.Price, product.Description, product.Quantity));
         }
         private void buttonAddToBasket_Click(object sender, EventArgs e)
         {

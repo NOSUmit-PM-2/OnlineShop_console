@@ -30,10 +30,15 @@ namespace OnlineShop
         }
 
 
-        public void IncreaseQuantity(int amount)
+        public void IncreaseQuantity()
         {
-            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
-            Quantity += amount;
+            //if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+            Quantity ++;
+        }
+
+        public void DeincreaseQuantity()
+        {
+            Quantity --;
         }
 
         public override string ToString()

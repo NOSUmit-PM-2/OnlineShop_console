@@ -24,10 +24,49 @@ namespace WinFormOnlineShop_2026
             foreach (Product product in basket.getAll())
                 listBoxBasket.Items.Add($"{product.Name} Цена за штуку: {product.Price} Кол-во: {product.Quantity} шт");
         }
-
+        void UpdateCatalog()
+        {
+            listBoxBasket.Items.Clear();
+            foreach (Product product in basket.getAll())
+                listBoxBasket.Items.Add($"{product.Name} Цена за штуку: {product.Price} Кол-во: {product.Quantity} шт");
+        }
         private void FormBasket_Load(object sender, EventArgs e)
         {
             ShowCatalog();
+        }
+
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                basket[listBoxBasket.SelectedIndex + 1].IncreaseQuantity();
+                UpdateCatalog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выбери товар!", "Ошибка", MessageBoxButtons.OK);
+            }
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (basket[listBoxBasket.SelectedIndex + 1].Quantity > 1)
+                {
+                    basket[listBoxBasket.SelectedIndex + 1].DeincreaseQuantity();
+                    UpdateCatalog();
+                }
+                else
+                {
+                    basket.RemoveAt(listBoxBasket.SelectedIndex);
+                    UpdateCatalog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выбери товар!", "Ошибка", MessageBoxButtons.OK);
+            }
         }
     }
 }

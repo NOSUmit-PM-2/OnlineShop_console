@@ -46,5 +46,7 @@ namespace OnlineShop
         }
         public int Count() 
         {  return listProducts.Count; }
+        public void RemoveAt(int index)
+        { listProducts.RemoveAt(index); }
     }
 }

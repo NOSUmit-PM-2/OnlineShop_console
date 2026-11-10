@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            panel2 = new Panel();
             listBoxBasket = new ListBox();
-            buttonPlus = new Button();
-            buttonMinus = new Button();
+            panel2 = new Panel();
             labelCost = new Label();
+            buttonMinus = new Button();
+            buttonPlus = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -47,17 +47,6 @@
             panel1.Size = new Size(416, 450);
             panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(labelCost);
-            panel2.Controls.Add(buttonMinus);
-            panel2.Controls.Add(buttonPlus);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(422, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(378, 450);
-            panel2.TabIndex = 1;
-            // 
             // listBoxBasket
             // 
             listBoxBasket.Dock = DockStyle.Fill;
@@ -69,23 +58,16 @@
             listBoxBasket.Size = new Size(416, 450);
             listBoxBasket.TabIndex = 0;
             // 
-            // buttonPlus
+            // panel2
             // 
-            buttonPlus.Location = new Point(123, 191);
-            buttonPlus.Name = "buttonPlus";
-            buttonPlus.Size = new Size(67, 58);
-            buttonPlus.TabIndex = 0;
-            buttonPlus.Text = "+";
-            buttonPlus.UseVisualStyleBackColor = true;
-            // 
-            // buttonMinus
-            // 
-            buttonMinus.Location = new Point(47, 191);
-            buttonMinus.Name = "buttonMinus";
-            buttonMinus.Size = new Size(70, 58);
-            buttonMinus.TabIndex = 1;
-            buttonMinus.Text = "-";
-            buttonMinus.UseVisualStyleBackColor = true;
+            panel2.Controls.Add(labelCost);
+            panel2.Controls.Add(buttonMinus);
+            panel2.Controls.Add(buttonPlus);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(422, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(378, 450);
+            panel2.TabIndex = 1;
             // 
             // labelCost
             // 
@@ -96,6 +78,26 @@
             labelCost.Size = new Size(136, 32);
             labelCost.TabIndex = 2;
             labelCost.Text = "Стоимость:";
+            // 
+            // buttonMinus
+            // 
+            buttonMinus.Location = new Point(47, 191);
+            buttonMinus.Name = "buttonMinus";
+            buttonMinus.Size = new Size(70, 58);
+            buttonMinus.TabIndex = 1;
+            buttonMinus.Text = "-";
+            buttonMinus.UseVisualStyleBackColor = true;
+            buttonMinus.Click += buttonMinus_Click;
+            // 
+            // buttonPlus
+            // 
+            buttonPlus.Location = new Point(123, 191);
+            buttonPlus.Name = "buttonPlus";
+            buttonPlus.Size = new Size(67, 58);
+            buttonPlus.TabIndex = 0;
+            buttonPlus.Text = "+";
+            buttonPlus.UseVisualStyleBackColor = true;
+            buttonPlus.Click += buttonPlus_Click;
             // 
             // FormBasket
             // 
