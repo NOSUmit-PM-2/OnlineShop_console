@@ -6,6 +6,7 @@ namespace WinFormOnlineShop_2026
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
+        Catalog basket = new Catalog();
         public FormCatalog()
         {
             InitializeComponent();
@@ -23,14 +24,40 @@ namespace WinFormOnlineShop_2026
         {
             int i = 0;
             foreach (Product product in catalog.getAll())
-                listBoxCatalog.Items.Add($"{++i} {product}");
+                listBoxCatalog.Items.Add($"{++i} {product.Name}");
         }
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelProductName.Text = catalog[listBoxCatalog.SelectedIndex+1].Name;
-            labelDescription.Text = catalog[listBoxCatalog.SelectedIndex+1].Description;
-            labelDescription.Text += "\n" + "Цена товара: " + catalog[listBoxCatalog.SelectedIndex+1].Price;
+            labelProductName.Text = catalog[listBoxCatalog.SelectedIndex + 1].Name;
+            labelDescription.Text = catalog[listBoxCatalog.SelectedIndex + 1].Description;
+            labelDescription.Text += "\n" + "Цена товара: " + catalog[listBoxCatalog.SelectedIndex + 1].Price;
+        }
+        void AddOrIncrease(Catalog basket, Product product, int amount = 1)
+        {
+            bool flag = false;
+            for (int i = 1; i < basket.Count()+1;i++)
+            {
+                if (basket[i].Name == product.Name)
+                {
+                    basket[i].IncreaseQuantity(amount);
+                    flag = true;
+                }
+            }
+            if (flag) { return; }
+            if (!flag)
+            basket.Add(new Product(product.Name, product.Price, product.Description, amount));
+        }
+        private void buttonAddToBasket_Click(object sender, EventArgs e)
+        {
+            AddOrIncrease(basket, catalog[listBoxCatalog.SelectedIndex + 1]);
+            MessageBox.Show($"Товар {catalog[listBoxCatalog.SelectedIndex + 1].Name} добавлен в корзину.", "Добавление в корзину", MessageBoxButtons.OK);
+        }
+
+        private void buttonOpenBasket_Click(object sender, EventArgs e)
+        {
+            FormBasket formbasket = new FormBasket(basket);
+            formbasket.ShowDialog();
         }
     }
 }

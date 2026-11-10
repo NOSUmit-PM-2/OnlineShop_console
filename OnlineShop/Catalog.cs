@@ -40,6 +40,11 @@ namespace OnlineShop
         {
             return listProducts.ToArray();
         }
-
+        public List<Product> ToList()
+        {
+            return new List<Product>(listProducts);
+        }
+        public int Count() 
+        {  return listProducts.Count; }
     }
 }
