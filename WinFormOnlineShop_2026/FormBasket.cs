@@ -30,9 +30,19 @@ namespace WinFormOnlineShop_2026
             foreach (Product product in basket.getAll())
                 listBoxBasket.Items.Add($"{product.Name} Цена за штуку: {product.Price} Кол-во: {product.Quantity} шт");
         }
+        void ShowCost()
+        {
+            decimal cost = 0;
+            for (int i = 1; i < basket.Count() + 1; i++)
+            {
+                cost += basket[i].Price * basket[i].Quantity;
+            }
+            labelCost.Text = $"Стоимость: {cost}";
+        }
         private void FormBasket_Load(object sender, EventArgs e)
         {
             ShowCatalog();
+            ShowCost();
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
@@ -41,6 +51,7 @@ namespace WinFormOnlineShop_2026
             {
                 basket[listBoxBasket.SelectedIndex + 1].IncreaseQuantity();
                 UpdateCatalog();
+                ShowCost() ;
             }
             catch (Exception ex)
             {
@@ -56,11 +67,13 @@ namespace WinFormOnlineShop_2026
                 {
                     basket[listBoxBasket.SelectedIndex + 1].DeincreaseQuantity();
                     UpdateCatalog();
+                    ShowCost() ;
                 }
                 else
                 {
                     basket.RemoveAt(listBoxBasket.SelectedIndex);
                     UpdateCatalog();
+                    ShowCost();
                 }
             }
             catch (Exception ex)
