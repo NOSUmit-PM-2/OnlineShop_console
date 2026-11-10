@@ -10,10 +10,10 @@ namespace WinFormOnlineShop_2026
         public FormCatalog()
         {
             InitializeComponent();
-            catalog.Add(new Product("Вертолет", 100, "игрушка веселая"));
-            catalog.Add(new Product("Майка", 1005, "с принтом"));
-            catalog.Add(new Product("Тапки", 250, "пляжные"));
-            catalog.Add(new Product("Тетрадь", 17, "по информатике"));
+            catalog.Add(new Product("Вертолет", 100, "Игрушка веселая"));
+            catalog.Add(new Product("Майка", 1005, "С принтом"));
+            catalog.Add(new Product("Тапки", 250, "Пляжные"));
+            catalog.Add(new Product("Тетрадь", 17, "По информатике"));
             ShowCatalog();
             listBoxCatalog.SelectedIndex = 0;
             labelProductName.Text = catalog[1].Name;
@@ -22,9 +22,8 @@ namespace WinFormOnlineShop_2026
         }
         void ShowCatalog()
         {
-            int i = 0;
             foreach (Product product in catalog.getAll())
-                listBoxCatalog.Items.Add($"{++i} {product.Name}");
+                listBoxCatalog.Items.Add($"{product.Name}");
         }
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)

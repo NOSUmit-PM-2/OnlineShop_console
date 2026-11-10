@@ -22,13 +22,13 @@ namespace WinFormOnlineShop_2026
         void ShowCatalog()
         {
             foreach (Product product in basket.getAll())
-                listBoxBasket.Items.Add($"{product.Name} Цена за штуку: {product.Price} Кол-во: {product.Quantity} шт");
+                listBoxBasket.Items.Add($"{product.Name} | Цена за штуку: {product.Price} | Кол-во: {product.Quantity} шт");
         }
         void UpdateCatalog()
         {
             listBoxBasket.Items.Clear();
             foreach (Product product in basket.getAll())
-                listBoxBasket.Items.Add($"{product.Name} Цена за штуку: {product.Price} Кол-во: {product.Quantity} шт");
+                listBoxBasket.Items.Add($"{product.Name} | Цена за штуку: {product.Price} | Кол-во: {product.Quantity} шт");
         }
         void ShowCost()
         {

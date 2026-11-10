@@ -12,13 +12,6 @@ namespace OnlineShop
 
         public Product this[int index]
         {
-            //get 
-            //{
-            //    index--;
-            //    if (index >= 0 && index < listProducts.Count)
-            //        return listProducts[index]; 
-            //    return null;
-            //}
 
             get
             {
@@ -27,8 +20,6 @@ namespace OnlineShop
                     return listProducts[index]; 
                 throw new IndexOutOfRangeException();    
             }
-
-            //set { ... }
         }
 
         public void Add(Product product)
