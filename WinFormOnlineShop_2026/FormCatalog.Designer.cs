@@ -33,6 +33,8 @@
             label1 = new Label();
             splitter1 = new Splitter();
             panelProduct = new Panel();
+            buttonOpenBasket = new Button();
+            buttonAddToBasket = new Button();
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
@@ -80,6 +82,8 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(buttonOpenBasket);
+            panelProduct.Controls.Add(buttonAddToBasket);
             panelProduct.Controls.Add(labelDescription);
             panelProduct.Controls.Add(labelProductName);
             panelProduct.Controls.Add(label2);
@@ -88,6 +92,26 @@
             panelProduct.Name = "panelProduct";
             panelProduct.Size = new Size(545, 450);
             panelProduct.TabIndex = 2;
+            // 
+            // buttonOpenBasket
+            // 
+            buttonOpenBasket.Location = new Point(111, 389);
+            buttonOpenBasket.Name = "buttonOpenBasket";
+            buttonOpenBasket.Size = new Size(286, 38);
+            buttonOpenBasket.TabIndex = 5;
+            buttonOpenBasket.Text = "Открыть корзину";
+            buttonOpenBasket.UseVisualStyleBackColor = true;
+            buttonOpenBasket.Click += buttonOpenBasket_Click;
+            // 
+            // buttonAddToBasket
+            // 
+            buttonAddToBasket.Location = new Point(111, 291);
+            buttonAddToBasket.Name = "buttonAddToBasket";
+            buttonAddToBasket.Size = new Size(286, 80);
+            buttonAddToBasket.TabIndex = 4;
+            buttonAddToBasket.Text = "Добавить в корзину";
+            buttonAddToBasket.UseVisualStyleBackColor = true;
+            buttonAddToBasket.Click += buttonAddToBasket_Click;
             // 
             // labelDescription
             // 
@@ -146,5 +170,7 @@
         private Label labelProductName;
         private Label label2;
         private Label labelDescription;
+        private Button buttonOpenBasket;
+        private Button buttonAddToBasket;
     }
 }
