@@ -18,13 +18,24 @@ namespace WinFormOnlineShop_2026
         void ShowCatalog()
         {
             int i = 0;
-            foreach (Product product in catalog.getAll())
+            //foreach (Product product in catalog.getAll())
+            //    listBoxCatalog.Items.Add($"{++i} {product}");
+
+            foreach (Product product in catalog)
                 listBoxCatalog.Items.Add($"{++i} {product}");
+        }
+
+        void ShowProduct(int index)
+        {
+            // в индексаторе подразумевается нумерациия с 1
+            labelProductName.Text = catalog[index + 1].Name;
+            labelDescription.Text = catalog[index + 1].Description;
+            labelPrice.Text = catalog[index + 1].Price.ToString();
         }
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ShowProduct(listBoxCatalog.SelectedIndex);
         }
     }
 }

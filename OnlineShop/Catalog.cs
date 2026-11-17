@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,47 @@ using System.Threading.Tasks;
 
 namespace OnlineShop
 {
-    public class Catalog
+    public class CatalogEnumerator : IEnumerator
     {
-        List<Product> listProducts = new List<Product>();
+        List<Product> listProducts;
+
+        public CatalogEnumerator(List<Product>  listProducts)
+        {
+            this.listProducts = listProducts;
+        }
+        public object Current 
+        { 
+            get { return listProducts[CurIndex]; } 
+        }
+        int CurIndex = -1;
+
+        public bool MoveNext()
+        {
+            //CurIndex++;
+            //if (CurIndex >= listProducts.Count)
+            //{
+            //    return false;
+            //}
+            //return true;
+
+            CurIndex++;
+
+            if (CurIndex >= listProducts.Count)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void Reset()
+        {
+            CurIndex = 0;
+        }
+    }
+    public class Catalog:IEnumerable
+    {
+        List<Product> listProducts =  new List<Product>();
 
         public Product this[int index]
         {
@@ -41,5 +80,9 @@ namespace OnlineShop
             return listProducts.ToArray();
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            return new CatalogEnumerator(listProducts);
+        }
     }
 }
