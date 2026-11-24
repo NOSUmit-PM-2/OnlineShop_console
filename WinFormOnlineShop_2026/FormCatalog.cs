@@ -27,7 +27,12 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int itemInd = listBoxCatalog.SelectedIndex;
+            var item = catalog[itemInd];
 
+            labelProductName.Text = item.Name;
+            labelDescription.Text = item.Description;
+            labelProductPrice.Text = $"{item.Price.ToString()} руб.";
         }
 
         private void FormCatalog_Load(object sender, EventArgs e)

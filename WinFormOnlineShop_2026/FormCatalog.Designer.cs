@@ -33,11 +33,12 @@
             label1 = new Label();
             splitter1 = new Splitter();
             panelProduct = new Panel();
+            labelProductPrice = new Label();
+            cartViewBtn = new Button();
             button1 = new Button();
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
-            cartViewBtn = new Button();
             panelCatalog.SuspendLayout();
             panelProduct.SuspendLayout();
             SuspendLayout();
@@ -84,6 +85,7 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(labelProductPrice);
             panelProduct.Controls.Add(cartViewBtn);
             panelProduct.Controls.Add(button1);
             panelProduct.Controls.Add(labelDescription);
@@ -95,6 +97,26 @@
             panelProduct.Name = "panelProduct";
             panelProduct.Size = new Size(499, 600);
             panelProduct.TabIndex = 2;
+            // 
+            // labelProductPrice
+            // 
+            labelProductPrice.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            labelProductPrice.Location = new Point(127, 382);
+            labelProductPrice.Name = "labelProductPrice";
+            labelProductPrice.Size = new Size(327, 37);
+            labelProductPrice.TabIndex = 6;
+            labelProductPrice.Text = "Цена";
+            labelProductPrice.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // cartViewBtn
+            // 
+            cartViewBtn.Location = new Point(393, 12);
+            cartViewBtn.Name = "cartViewBtn";
+            cartViewBtn.Size = new Size(94, 29);
+            cartViewBtn.TabIndex = 5;
+            cartViewBtn.Text = "Корзина";
+            cartViewBtn.UseVisualStyleBackColor = true;
+            cartViewBtn.Click += cartViewBtn_Click;
             // 
             // button1
             // 
@@ -137,16 +159,6 @@
             label2.TabIndex = 1;
             label2.Text = "Карточка товара";
             // 
-            // cartViewBtn
-            // 
-            cartViewBtn.Location = new Point(393, 12);
-            cartViewBtn.Name = "cartViewBtn";
-            cartViewBtn.Size = new Size(94, 29);
-            cartViewBtn.TabIndex = 5;
-            cartViewBtn.Text = "Корзина";
-            cartViewBtn.UseVisualStyleBackColor = true;
-            cartViewBtn.Click += cartViewBtn_Click;
-            // 
             // FormCatalog
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -178,5 +190,6 @@
         private Label labelDescription;
         private Button button1;
         private Button cartViewBtn;
+        private Label labelProductPrice;
     }
 }
