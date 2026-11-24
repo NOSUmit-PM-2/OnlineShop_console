@@ -14,6 +14,8 @@ namespace WinFormOnlineShop_2026
             catalog.Add(new Product("Тапки", 250, "пляжные"));
             catalog.Add(new Product("Тетрадь", 17, "по информатике"));
             ShowCatalog();
+
+            listBoxCatalog.SelectedIndex = 0;//сделано, чтобы изначально показывался самый первый товар
         }
 
         void ShowCatalog()
