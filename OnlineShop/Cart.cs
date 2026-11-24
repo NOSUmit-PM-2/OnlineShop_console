@@ -17,9 +17,31 @@ namespace OnlineShop
             items.Add(new CartItem(product)); 
         }
 
+        public bool Contains(Product product)
+        {
+            foreach (var item in items) 
+            {
+                if (item.Product == product)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void Delete(int index)
-        {  
+        {
             items.RemoveAt(index);
+        }
+        public void AddCount(int index)
+        {
+            items[index].Count++;
+        }
+
+        public void MinusCount(int index)
+        {
+            if (items[index].Count > 0)
+                items[index].Count--;
         }
 
         public CartItem[] getAll()

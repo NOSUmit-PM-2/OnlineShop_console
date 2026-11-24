@@ -40,9 +40,18 @@ namespace WinFormOnlineShop_2026
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            CartItem cartItem = new CartItem(choosenProduct);
             if (choosenProduct != null)
             {
-                userCart.Add(choosenProduct);
+                if (!userCart.Contains(cartItem.Product))
+                {
+                    userCart.Add(choosenProduct);
+                }
+                else
+                {
+                    cartItem.Count++;
+                }
+
             }
         }
 

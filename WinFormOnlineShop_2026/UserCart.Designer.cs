@@ -32,6 +32,8 @@
             buttonQuit = new Button();
             labelPrice = new Label();
             buttonDelete = new Button();
+            buttonAdd = new Button();
+            buttonMinus = new Button();
             SuspendLayout();
             // 
             // listBoxUserCart
@@ -40,13 +42,13 @@
             listBoxUserCart.ItemHeight = 15;
             listBoxUserCart.Location = new Point(14, 11);
             listBoxUserCart.Name = "listBoxUserCart";
-            listBoxUserCart.Size = new Size(221, 574);
+            listBoxUserCart.Size = new Size(231, 544);
             listBoxUserCart.TabIndex = 0;
             // 
             // buttonQuit
             // 
             buttonQuit.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            buttonQuit.Location = new Point(241, 485);
+            buttonQuit.Location = new Point(251, 488);
             buttonQuit.Name = "buttonQuit";
             buttonQuit.Size = new Size(154, 100);
             buttonQuit.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             labelPrice.AutoSize = true;
             labelPrice.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            labelPrice.Location = new Point(241, 341);
+            labelPrice.Location = new Point(251, 171);
             labelPrice.Name = "labelPrice";
             labelPrice.Size = new Size(68, 25);
             labelPrice.TabIndex = 2;
@@ -67,19 +69,43 @@
             // buttonDelete
             // 
             buttonDelete.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonDelete.Location = new Point(241, 395);
+            buttonDelete.Location = new Point(251, 396);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(154, 72);
             buttonDelete.TabIndex = 3;
             buttonDelete.Text = "Убрать товар";
             buttonDelete.UseVisualStyleBackColor = true;
-            buttonDelete.Click += this.buttonDelete_Click;
+            buttonDelete.Click += buttonDelete_Click;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.Font = new Font("Segoe UI Black", 30.75F, FontStyle.Bold);
+            buttonAdd.Location = new Point(251, 302);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(69, 72);
+            buttonAdd.TabIndex = 4;
+            buttonAdd.Text = "+";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // buttonMinus
+            // 
+            buttonMinus.Font = new Font("Segoe UI Semibold", 30.75F, FontStyle.Bold);
+            buttonMinus.Location = new Point(336, 302);
+            buttonMinus.Name = "buttonMinus";
+            buttonMinus.Size = new Size(69, 72);
+            buttonMinus.TabIndex = 5;
+            buttonMinus.Text = "-";
+            buttonMinus.UseVisualStyleBackColor = true;
+            buttonMinus.Click += buttonMinus_Click;
             // 
             // UserCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 600);
+            Controls.Add(buttonMinus);
+            Controls.Add(buttonAdd);
             Controls.Add(buttonDelete);
             Controls.Add(labelPrice);
             Controls.Add(buttonQuit);
@@ -96,5 +122,7 @@
         private Button buttonQuit;
         private Label labelPrice;
         private Button buttonDelete;
+        private Button buttonAdd;
+        private Button buttonMinus;
     }
 }

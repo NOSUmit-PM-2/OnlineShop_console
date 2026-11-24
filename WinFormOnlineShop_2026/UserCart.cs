@@ -35,8 +35,8 @@ namespace WinFormOnlineShop_2026
             decimal price = 0;
             foreach (CartItem cartItem in newCart.getAll())
             {
-                listBoxUserCart.Items.Add(cartItem.Product);
-                price += cartItem.Product.Price;
+                listBoxUserCart.Items.Add($"Кол-во: {cartItem.Count} | {cartItem.Product}");
+                price += cartItem.Product.Price * cartItem.Count;
             }
             labelPrice.Text = $"Цена: {price.ToString()}";
         }
@@ -45,11 +45,39 @@ namespace WinFormOnlineShop_2026
         {
             this.Close();
         }
+
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int index = listBoxUserCart.SelectedIndex;
-            newCart.Delete(index);
-            ChangeCart();
+            if (index >= 0)
+            {
+                newCart.Delete(index);
+                ChangeCart();
+                listBoxUserCart.SelectedIndex = Math.Min(index, listBoxUserCart.Items.Count - 1);
+            }
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            int index = listBoxUserCart.SelectedIndex;
+            if (index >= 0)
+            {
+                newCart.AddCount(index);
+                ChangeCart();
+                listBoxUserCart.SelectedIndex = index;
+            }
+        }
+
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            int index = listBoxUserCart.SelectedIndex;
+            if (index >= 0)
+            {
+                newCart.MinusCount(index);
+                ChangeCart();
+                listBoxUserCart.SelectedIndex = Math.Min(index, listBoxUserCart.Items.Count - 1);
+            }
         }
     }
 }
