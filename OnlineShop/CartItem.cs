@@ -18,7 +18,7 @@ namespace OnlineShop
         
         public override string ToString()
         {
-            return $"{Product.Name} количество {Count} цена {Count * Product.Price}";
+            return $"{Product.Name} количество {Count} цена {Product.Price}";
         }
 
     }

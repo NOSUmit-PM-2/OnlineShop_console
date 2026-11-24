@@ -15,12 +15,25 @@ namespace OnlineShop
         public void Add(Product product)
             { items.Add(new CartItem(product)); }
 
-        public void Delete()
-            {  }
+        public void Delete(CartItem delItem)
+        {
+            items.Remove(delItem);
+        }
 
+        public CartItem this[int index]
+        {
+            get {
+                if(index >= 0 && index < items.Count)
+                    return items[index];
+                else
+                    throw new IndexOutOfRangeException();
+            }
+        }
         
         public CartItem[] getAll()
-            { return items.ToArray(); }
+        { 
+            return items.ToArray(); 
+        }
 
     }
 }

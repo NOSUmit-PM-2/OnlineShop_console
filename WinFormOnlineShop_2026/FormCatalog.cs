@@ -42,11 +42,15 @@ namespace WinFormOnlineShop_2026
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int selectedItemIndex = listBoxCatalog.SelectedIndex;
-            Product selectedProd = catalog[selectedItemIndex];
+            if (listBoxCatalog.SelectedItem != null)
+            {
+                int selectedItemIndex = listBoxCatalog.SelectedIndex;
+                Product selectedProd = catalog[selectedItemIndex];
 
-            cart.Add(selectedProd);
-            //MessageBox.Show($"{selectedProd.Name}");
+                cart.Add(selectedProd);
+            }
+            else
+                MessageBox.Show("Выберите товар");
         }
 
         private void cartViewBtn_Click(object sender, EventArgs e)

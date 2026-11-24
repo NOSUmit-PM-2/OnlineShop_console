@@ -138,7 +138,7 @@
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(327, 176);
             labelDescription.TabIndex = 3;
-            labelDescription.Text = "Название товара";
+            labelDescription.Text = "Описание товара";
             // 
             // labelProductName
             // 
