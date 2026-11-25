@@ -14,6 +14,11 @@ namespace WinFormOnlineShop_2026
             catalog.Add(new Product("Тапки", 250, "пляжные"));
             catalog.Add(new Product("Тетрадь", 17, "по информатике"));
             ShowCatalog();
+
+            if (listBoxCatalog.Items.Count > 0)
+            {
+                listBoxCatalog.SelectedIndex = 0;
+            }
         }
 
         void ShowCatalog()
@@ -50,6 +55,11 @@ namespace WinFormOnlineShop_2026
                 cart.Add(selectedProduct);
                 MessageBox.Show($"Товар   {selectedProduct.Name}   добавлен в корзину!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void panelProduct_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -94,6 +94,7 @@
             panelProduct.Name = "panelProduct";
             panelProduct.Size = new Size(545, 450);
             panelProduct.TabIndex = 2;
+            panelProduct.Paint += panelProduct_Paint;
             // 
             // buttonShowCart
             // 
